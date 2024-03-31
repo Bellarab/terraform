@@ -7,13 +7,12 @@ provider "aws" {
 resource "aws_instance" "ec2_example" {
   ami           = "ami-08116b9957a259459"
   instance_type = "t2.micro"
-  key_name      = aws_key_pair.deployer.key_name  # Use the key_name from aws_key_pair resource
+  key_name      = "keyy"
 
   tags = {
     Name = "public_instance"
   }
 }
-
 
 resource "aws_key_pair" "deployer" {
   key_name   = "keyy"
